@@ -299,6 +299,22 @@ class TwitterOAuth extends Config
         }
     }
 
+     /**
+     * Upload media to upload.twitter.com. With url
+     *
+     * @param string $path
+     * @param array  $parameters
+     * @param boolean  $chunked
+     *
+     * @return array|object
+     */
+    public function uploadWithUrl(
+        string $url,
+        array $parameters = []
+    ) {
+        return $this->uploadMediaWithUrl($url, $parameters)
+    }
+
     /**
      * Progression of media upload
      *
@@ -348,6 +364,33 @@ class TwitterOAuth extends Config
         );
     }
 
+
+    /**
+     * Private method to upload media (not chunked) to upload.twitter.com.
+     *
+     * @param string $path
+     * @param array  $parameters
+     *
+     * @return array|object
+     */
+    private function uploadMediaWithUrl(string $url, array $parameters)
+    {
+        if (
+            ($file = file_get_contents($parameters['media'])) === false
+        ) {
+            throw new \InvalidArgumentException(
+                'You must supply a readable file',
+            );
+        }
+        $parameters['media'] = base64_encode($file);
+        return $this->http(
+            'POST',
+            self::UPLOAD_HOST,
+            $url,
+            $parameters,
+            false,
+        );
+    }
     /**
      * Private method to upload media (chunked) to upload.twitter.com.
      *
