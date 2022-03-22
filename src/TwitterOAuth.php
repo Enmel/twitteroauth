@@ -312,7 +312,7 @@ class TwitterOAuth extends Config
         string $url,
         array $parameters = []
     ) {
-        return $this->uploadMediaWithUrl($url, $parameters)
+        return $this->uploadMediaWithUrl($url, $parameters);
     }
 
     /**
