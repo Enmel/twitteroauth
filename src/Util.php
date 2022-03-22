@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Abraham\TwitterOAuth;
+namespace Enmel\TwitterOAuth;
 
 class Util
 {

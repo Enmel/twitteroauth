@@ -8,15 +8,15 @@
 
 declare(strict_types=1);
 
-namespace Abraham\TwitterOAuth;
+namespace Enmel\TwitterOAuth;
 
-use Abraham\TwitterOAuth\Util\JsonDecoder;
+use Enmel\TwitterOAuth\Util\JsonDecoder;
 use Composer\CaBundle\CaBundle;
 
 /**
  * TwitterOAuth class for interacting with the Twitter API.
  *
- * @author Abraham Williams <abraham@abrah.am>
+ * @author Enmel Williams <Enmel@abrah.am>
  */
 class TwitterOAuth extends Config
 {
