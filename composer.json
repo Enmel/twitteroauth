@@ -1,7 +1,7 @@
 {
-  "name": "abraham/twitteroauth",
+  "name": "enmel/twitteroauth",
   "type": "library",
-  "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+  "description": "A fork for personal use from Abraham Williams TwitterOAuth.",
   "keywords": [
     "twitter",
     "api",
@@ -12,27 +12,11 @@
     "twitter oauth"
   ],
   "license": "MIT",
-  "homepage": "https://twitteroauth.com",
   "authors": [
     {
-      "name": "Abraham Williams",
-      "email": "abraham@abrah.am",
-      "homepage": "https://abrah.am",
+      "name": "Enmanuel Marval",
+      "email": "enmancha@gmail.com",
       "role": "Developer"
-    }
-  ],
-  "support": {
-    "source": "https://github.com/abraham/twitteroauth",
-    "issues": "https://github.com/abraham/twitteroauth/issues"
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/morozov/php-vcr"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/abraham/phpunit-testlistener-vcr"
     }
   ],
   "require": {
@@ -49,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Abraham\\TwitterOAuth\\": "src"
+      "Enmel\\TwitterOAuth\\": "src"
     }
   }
 }
