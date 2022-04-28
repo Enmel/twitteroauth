@@ -376,7 +376,16 @@ class TwitterOAuth extends Config
     private function uploadMediaWithUrl(string $url, array $parameters)
     {
         if (
-            ($file = file_get_contents($parameters['media'])) === false
+            (
+                $file = file_get_contents($parameters['media'], false, stream_context_create(
+                [
+                    "ssl"=> [
+                        "verify_peer"=>false,
+                        "verify_peer_name"=>false,
+                    ]
+                ]))
+            ) === false
+        
         ) {
             throw new \InvalidArgumentException(
                 'You must supply a readable file',
